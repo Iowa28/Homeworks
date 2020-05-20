@@ -40,7 +40,7 @@ public class FileManager {
 				break;
 			case "start":
 				if (commands.length < 2) {
-					System.out.println("Ýìì... âû íå ââåëè èìÿ ôàéëà èëè ïàïêè, êîòîðóþ õîòèòå çàïóñòèòü.");
+					System.out.println("Ð­Ð¼Ð¼... Ð²Ñ‹ Ð½Ðµ Ð²Ð²ÐµÐ»Ð¸ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð° Ð¸Ð»Ð¸ Ð¿Ð°Ð¿ÐºÐ¸, ÐºÐ¾Ñ‚Ð¾Ñ€ÑƒÑŽ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð·Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ.");
 					break;
 				}
 				String fileName = commands[1];
@@ -49,27 +49,27 @@ public class FileManager {
 				break;
 			case "delete":
 				if (commands.length < 2) {
-					System.out.println("Ýìì... âû íå ââåëè èìÿ ôàéëà, êîòîðûé õîòèòå óäàëèòü.");
+					System.out.println("Ð­Ð¼Ð¼... Ð²Ñ‹ Ð½Ðµ Ð²Ð²ÐµÐ»Ð¸ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð° Ð¸Ð»Ð¸ Ð¿Ð°Ð¿ÐºÐ¸, ÐºÐ¾Ñ‚Ð¾Ñ€ÑƒÑŽ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð·Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ.");
 					break;
 				}
 				String fileToDelete = commands[1];
 				fileToDelete = thisDirectory.toString() + "\\" + fileToDelete;
 				if (Files.exists(Paths.get(fileToDelete))) {
-					System.out.println("Âû óâåðåíû, ÷òî õîòèòå óäàëèòü ýòîò ôàéë? Ââåäèòå 'Y' èëè 'N'");
+					System.out.println("Ð’Ñ‹ ÑƒÐ²ÐµÑ€ÐµÐ½Ñ‹, Ñ‡Ñ‚Ð¾ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ ÑÑ‚Ð¾Ñ‚ Ñ„Ð°Ð¹Ð»? Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ 'Y' Ð¸Ð»Ð¸ 'N'");
 					char answer = input.nextLine().charAt(0);
 					if (answer == 'Y' || answer == 'y') {
 						Files.delete(Paths.get(fileToDelete));
 						if (!Files.exists(Paths.get(fileToDelete))) {
-							System.out.println("Ôàéë óñïåøíî óäàëåí.");
+							System.out.println("ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð½Ð°Ð¹Ñ‚Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ð¹ Ñ„Ð°Ð¹Ð».");
 						}
 					}
 				} else {
-					System.out.println("Íå óäàëîñü íàéòè äàííûé ôàéë.");
+					System.out.println("ÃÃ¥ Ã³Ã¤Ã Ã«Ã®Ã±Ã¼ Ã­Ã Ã©Ã²Ã¨ Ã¤Ã Ã­Ã­Ã»Ã© Ã´Ã Ã©Ã«.");
 				}
 				break;
 			case "copy":
 				if (commands.length < 2) {
-					System.out.println("Ýìì... âû íå ââåëè èìÿ ôàéëà, êîòîðûé õîòèòå ñêîïèðîâàòü.");
+					System.out.println("Ð­Ð¼Ð¼... Ð²Ñ‹ Ð½Ðµ Ð²Ð²ÐµÐ»Ð¸ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð° Ð¸Ð»Ð¸ Ð¿Ð°Ð¿ÐºÐ¸, ÐºÐ¾Ñ‚Ð¾Ñ€ÑƒÑŽ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð·Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ.");
 					break;
 				}
 				String file = commands[1];
@@ -80,20 +80,20 @@ public class FileManager {
 					if (Files.exists(dirToCopy)) {
 						fileC = Files.copy(fileC, dirToCopy.resolve(fileC.getFileName()), REPLACE_EXISTING);
 						if (Files.exists(Paths.get(dirToCopy.toString() + "\\" + file))) {
-							System.out.println("Ôàéë óñïåøíî ñêîïèðîâàí â íîâóþ ïàïêó " + dirToCopy.toString() + ".");
+							System.out.println("Ð¤Ð°Ð¹Ð» ÑƒÑÐ¿ÐµÑˆÐ½Ð¾ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ð½ Ð² Ð½Ð¾Ð²ÑƒÑŽ Ð¿Ð°Ð¿ÐºÑƒ " + dirToCopy.toString() + ".");
 						} else {
-							System.out.println("Íå óäàëîñü ñêîïèðîâàòü äàííûé ôàéë.");
+							System.out.println("ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð´Ð°Ð½Ð½Ñ‹Ð¹ Ñ„Ð°Ð¹Ð».");
 						}
 					} else {
-						System.out.println("Íå óäàëîñü ñêîïèðîâàòü äàííûé ôàéë.");
+						System.out.println("ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ð´Ð°Ð½Ð½Ñ‹Ð¹ Ñ„Ð°Ð¹Ð».");
 					}
 				} else {
-					System.out.println("Íå óäàëîñü íàéòè äàííûé ôàéë.");
+					System.out.println("ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð½Ð°Ð¹Ñ‚Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ð¹ Ñ„Ð°Ð¹Ð»");
 				}
 				break;
 			case "cd":
 				if (commands.length < 2) {
-					System.out.println("Ýìì... âû íå ââåëè èìÿ ôàéëà èëè ïàïêè, â êîòîðóþ õîòèòå ïåðåéòè.");
+					System.out.println("Ð­Ð¼Ð¼... Ð²Ñ‹ Ð½Ðµ Ð²Ð²ÐµÐ»Ð¸ Ð¸Ð¼Ñ Ñ„Ð°Ð¹Ð»Ð° Ð¸Ð»Ð¸ Ð¿Ð°Ð¿ÐºÐ¸, ÐºÐ¾Ñ‚Ð¾Ñ€ÑƒÑŽ Ñ…Ð¾Ñ‚Ð¸Ñ‚Ðµ Ð·Ð°Ð¿ÑƒÑÑ‚Ð¸Ñ‚ÑŒ.");
 					break;
 				}
 				String nextCommand = commands[1];
@@ -108,25 +108,25 @@ public class FileManager {
 					if (Files.exists(Paths.get(nextCommand).normalize().toAbsolutePath())) {
 						thisDirectory = Paths.get(nextCommand).normalize().toAbsolutePath();
 					} else {
-						System.out.println("Íå óäàëîñü íàéòè ôàéë èëè äèðåêòîðèþ " + nextCommand + ".");
+						System.out.println("ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð½Ð°Ð¹Ñ‚Ð¸ Ñ„Ð°Ð¹Ð» Ð¸Ð»Ð¸ Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€Ð¸ÑŽ " + nextCommand + ".");
 					}
 					break;
 				}
 				
 				break;
 			case "help":
-				System.out.println("exit - âûõîä èç ïðîãðàììû");
-				System.out.println("ls - âûâîä èíôîðìàöèè î âñåõ ôàéëàõ òåêóùåé äèðåêòîðèè");
-				System.out.println("start - çàïóñê ôàéëà èëè ïàïêè");
-				System.out.println("delete - óäàëèòü ôàéë");
-				System.out.println("copy - ñêîïèðîâàòü ôàéë");
-				System.out.println("cd \\ - ïåðåõîä ê êîðíåâîé äèðåêòîðèè");
-				System.out.println("cd .. - ïåðåõîä íà äèðåêòîðèþ âûøå");
-				System.out.println("cd file - ïåðåõîä â äèðåêòîðèþ ñ ôàéëîì file");
-				System.out.println("cd dir - ïåðåõîä â äèðåêòîðèþ dir");
+				System.out.println("exit - Ð²Ñ‹Ñ…Ð¾Ð´ Ð¸Ð· Ð¿Ñ€Ð¾Ð³Ñ€Ð°Ð¼Ð¼Ñ‹");
+				System.out.println("ls - Ð²Ñ‹Ð²Ð¾Ð´ Ð¸Ð½Ñ„Ð¾Ñ€Ð¼Ð°Ñ†Ð¸Ð¸ Ð¾ Ð²ÑÐµÑ… Ñ„Ð°Ð¹Ð»Ð°Ñ… Ñ‚ÐµÐºÑƒÑ‰ÐµÐ¹ Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€Ð¸Ð¸");
+				System.out.println("start - Ð·Ð°Ð¿ÑƒÑÐº Ñ„Ð°Ð¹Ð»Ð° Ð¸Ð»Ð¸ Ð¿Ð°Ð¿ÐºÐ¸");
+				System.out.println("delete - ÑƒÐ´Ð°Ð»Ð¸Ñ‚ÑŒ Ñ„Ð°Ð¹Ð»");
+				System.out.println("copy - ÑÐºÐ¾Ð¿Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒ Ñ„Ð°Ð¹Ð»");
+				System.out.println("cd \\ - Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´ Ðº ÐºÐ¾Ñ€Ð½ÐµÐ²Ð¾Ð¹ Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€Ð¸Ð¸");
+				System.out.println("cd .. - Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´ Ð½Ð° Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€Ð¸ÑŽ Ð²Ñ‹ÑˆÐµ");
+				System.out.println("cd file - Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´ Ð² Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€Ð¸ÑŽ Ñ Ñ„Ð°Ð¹Ð»Ð¾Ð¼ file");
+				System.out.println("cd dir - Ð¿ÐµÑ€ÐµÑ…Ð¾Ð´ Ð² Ð´Ð¸Ñ€ÐµÐºÑ‚Ð¾Ñ€Ð¸ÑŽ dir");
 				break;
 			default:
-				System.out.println("Èçâèíè, íî ÿ íå çíàþ ýòó êîìàíäó.");
+				System.out.println("ÃˆÃ§Ã¢Ã¨Ã­Ã¨, Ã­Ã® Ã¿ Ã­Ã¥ Ã§Ã­Ã Ã¾ Ã½Ã²Ã³ ÃªÃ®Ã¬Ã Ã­Ã¤Ã³.");
 				break;
 			}
 			System.out.println();
@@ -139,17 +139,17 @@ public class FileManager {
 		for (File file: files) {
 			Date date = new Date(file.lastModified());
 			if (file.isFile()) {
-				System.out.println("ôàéë: " + file.getName() + " ïîñëåäíåå èçìåíåèå: " + date);
+				System.out.println("Ñ„Ð°Ð¹Ð»: " + file.getName() + " Ð¿Ð¾ÑÐ»ÐµÐ´Ð½ÐµÐµ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ¸Ðµ: " + date);
 			}
 			else if (file.isDirectory()) {
-				System.out.println("ïàïêà: " + file.getName() + " ïîñëåäíåå èçìåíåèå: " + date);
+				System.out.println("Ð¿Ð°Ð¿ÐºÐ°: " + file.getName() + " Ð¿Ð¾ÑÐ»ÐµÐ´Ð½ÐµÐµ Ð¸Ð·Ð¼ÐµÐ½ÐµÐ¸Ðµ: " + date);
 			}
 		}
 	}
 	
 	public void openFile(String fileName) throws IOException {
 		if (!Desktop.isDesktopSupported()) {
-			System.out.println("Âàø ðàáî÷èé ñòîë ïî÷åìó-òî íå ïîääåðæèâàåòñÿ :(");
+			System.out.println("Ð’Ð°Ñˆ Ñ€Ð°Ð±Ð¾Ñ‡Ð¸Ð¹ ÑÑ‚Ð¾Ð» Ð¿Ð¾Ñ‡ÐµÐ¼Ñƒ-Ñ‚Ð¾ Ð½Ðµ Ð¿Ð¾Ð´Ð´ÐµÑ€Ð¶Ð¸Ð²Ð°ÐµÑ‚ÑÑ :(");
 			return;
 		}
 		Desktop desktop = Desktop.getDesktop();
@@ -157,7 +157,7 @@ public class FileManager {
 		if (file.exists()) {
 			desktop.open(file);
 		} else {
-			System.out.println("Íå óäàåòñÿ íàéòè äàííûé ôàéë. Óáåäèòåñü, ÷òî âû ïðàâèëüíî ââåëè íàçâàíèå ýòîãî ôàéëà.");
+			System.out.println("ÐÐµ ÑƒÐ´Ð°ÐµÑ‚ÑÑ Ð½Ð°Ð¹Ñ‚Ð¸ Ð´Ð°Ð½Ð½Ñ‹Ð¹ Ñ„Ð°Ð¹Ð». Ð£Ð±ÐµÐ´Ð¸Ñ‚ÐµÑÑŒ, Ñ‡Ñ‚Ð¾ Ð²Ñ‹ Ð¿Ñ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾ Ð²Ð²ÐµÐ»Ð¸ Ð½Ð°Ð·Ð²Ð°Ð½Ð¸Ðµ ÑÑ‚Ð¾Ð³Ð¾ Ñ„Ð°Ð¹Ð»Ð°.");
 		}
 	}
 }
